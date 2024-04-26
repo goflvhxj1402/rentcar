@@ -1,0 +1,132 @@
+#slogan{
+    width: 100%;
+    height: 100vh;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    padding-top: calc(100vw * (70 / 1920));
+    padding-left: calc(100vw * (156 / 1920));
+}
+#slogan video{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    z-index: -1;
+}
+#slogan dl{
+    width: 50%;
+    height: calc(100vw * (450/1920));
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: start;
+    gap: calc(100vw * (10 / 1920));
+    color: white;
+}
+#slogan dl dt{
+    width: 100%;
+    height: fit-content;
+    order: 1;
+    font-family: "NanumSquare";
+    font-size: calc(100vw * (90/1920));
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+#slogan dl dd:nth-of-type(1){
+    width: 100%;
+    height: fit-content;
+    font-family: "NanumSquare";
+    font-size: calc(100vw * (42/1920));
+    font-weight: 500;
+}
+#slogan dl dd span{
+    background-color: #3071F2;
+}
+#slogan dl dd:nth-of-type(2){
+    order: 2; 
+}
+.inquireBtn{
+    width: calc(100vw * (250/1920));
+    height: calc(100vw * (80/1920));
+
+    display: block;
+
+    font-family: "Noto Sans KR";
+    font-weight: bold;
+    font-size: calc(100vw * (30/1920));
+    text-align: center;
+    line-height: calc(100vw * (80/1920));
+    color: white;
+   
+    border: 1px solid white;
+    border-radius: 0 30px 0 30px;
+    transition: background-color 0.5s;
+}
+.inquireBtn:hover{
+    background-color: #3071F2;
+}
+@media all and (max-width: 1280px) {
+    #slogan{
+       justify-content: center;
+       text-align: center;
+       padding: 0;
+    }
+    #slogan::before{
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+        position: absolute;
+     }
+    #slogan dl{
+        width: 100%;
+        height: 50%;
+        gap: calc(100vw * (20 / 1280));
+        position: relative;
+    }
+    #slogan dl dt{
+        font-size: calc(100vw * (90/1280));
+        font-weight: bold;
+        letter-spacing: 4px;
+    }
+    #slogan dl dd:nth-of-type(1){
+        font-size: calc(100vw * (42/1280));
+    }
+    #slogan dl dd:nth-of-type(2){
+        align-self: center;
+    }
+    .inquireBtn{
+        width: calc(100vw * (250/1280));
+        height: calc(100vw * (80/1280));
+        font-size: calc(100vw * (36/1280));
+        line-height: calc(100vw * (80/1280));
+        border-radius: 5px;
+    }
+}
+@media all and (max-width: 780px) {
+    #slogan dl{
+        height: 60%;
+        gap: calc(100vw * (20 / 780));
+    }
+    #slogan dl dt{
+        font-size: calc(100vw * (82/780));
+        letter-spacing: 4px;
+    }
+    #slogan dl dd:nth-of-type(1){
+        font-size: calc(100vw * (38/780));
+    }
+    .inquireBtn{
+        width: calc(100vw * (250/780));
+        height: calc(100vw * (80/780));
+        font-size: calc(100vw * (36/780));
+        line-height: calc(100vw * (80/780));
+        border-radius: 5px;
+    }
+}

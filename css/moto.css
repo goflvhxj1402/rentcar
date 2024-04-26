@@ -1,0 +1,185 @@
+#moto{
+    width: 100%;
+    height: 100vh; 
+}
+#moto ul{
+    width: 100%;
+    height: 100%;
+    perspective: calc(100vw * (500 / 1920));
+    transform-style: preserve-3d;
+    position: relative;
+}
+.motoList{
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+#moto1{
+    background-color: #191919;
+    backface-visibility: hidden;
+    transition: 1.0s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-image: url(../img/anger0.png);
+    background-repeat: no-repeat;
+    background-position: center top 20%;
+}
+#motoTextWrap{
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: calc(100vw * (20 / 1920));
+    opacity: 1;
+    overflow: hidden;
+}
+#moto1 p{
+    width: 50vw;
+    background-color: #191919;
+    color: #191919;
+    font-size: calc(100vw * (34 / 1920));
+    font-family: "Noto Sans KR";
+    font-weight: bold;
+    text-align: center;
+    border-radius: calc(100vw * (13 / 1920));
+    padding: calc(100% * (10 / 1920));
+    transition: 1.0s;
+    transform: translateY(100vh);
+}
+#moto1 p span{
+    color: #DC3644;
+}
+#moto2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    transition: 1.0s;
+}
+#moto2 p{
+    color: #191919;
+    font-family: "NanumSquare";
+    font-weight: bold;
+    font-size: calc(100vw * (300 / 1920));
+    text-transform: uppercase;
+}
+#moto3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 1.0s;
+}
+#moto3 video{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+}
+#moto3 div{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #191919;
+    opacity: 0.5;
+}
+#moto3 dl{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    z-index: 5;
+    line-height: calc(100vw * (100 / 1920));
+}
+#moto3 dl dt{
+    text-transform: uppercase;
+    font-size: calc(100vw * (100 / 1920));
+    font-family: "Noto Sans KR";
+    font-weight: bold;
+    letter-spacing: calc(100vw * (5 / 1920));
+}
+#moto3 dl dd{
+    text-transform: uppercase;
+    font-size: calc(100vw * (48 / 1920));
+    font-family: "Noto Sans KR";
+    font-weight: bold;
+}
+#moto3 dl dd span{
+    font-size: calc(100vw * (60 / 1920));
+    transition: background-color 1.0s;
+}
+#moto3 dl dd:last-of-type{
+    font-size: calc(100vw * (60 / 1920));
+}
+@media all and (max-width: 1280px) {
+    #moto ul{
+        perspective: calc(100vw * (500 / 1280));
+    }
+    #motoTextWrap{
+        gap: calc(100vw * (10 / 1280));
+    }
+    #moto1 p{
+        width: 60vw;
+        font-size: calc(100vw * (34 / 1280));
+        border-radius: calc(100vw * (13 / 1280));
+        padding: calc(100vw * (10 / 1280));
+    }
+    #moto3 dl{
+        line-height: calc(100vw * (100 / 1280));
+    }
+    #moto3 dl dt{
+        font-size: calc(100vw * (100 / 1280));
+        letter-spacing: calc(100vw * (5 / 1280));
+    }
+    #moto3 dl dd{
+        font-size: calc(100vw * (48 / 1280));
+    }
+    #moto3 dl dd span{
+        font-size: calc(100vw * (60 / 1280));
+    }
+    #moto3 dl dd:last-of-type{
+        font-size: calc(100vw * (60 / 1280));
+    }
+}
+@media all and (max-width: 780px) {
+    #moto ul{
+        perspective: calc(100vw * (500 / 780));
+    }
+    #motoTextWrap{
+        gap: calc(100vw * (10 / 780));
+    }
+    #moto1 p{
+        font-size: calc(100vw * (28 / 780));
+        border-radius: calc(100vw * (13 / 780));
+        padding: calc(100vw * (10 / 780));
+    }
+    #moto3 dl{
+        line-height: calc(100vw * (100 / 780));
+    }
+    #moto3 dl dt{
+        font-size: calc(100vw * (100 / 780));
+        letter-spacing: calc(100vw * (5 / 780));
+    }
+    #moto3 dl dd{
+        font-size: calc(100vw * (48 / 780));
+    }
+    #moto3 dl dd span{
+        font-size: calc(100vw * (60 / 780));
+    }
+    #moto3 dl dd:last-of-type{
+        font-size: calc(100vw * (60 / 780));
+    }
+}
