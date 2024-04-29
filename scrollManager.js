@@ -22,10 +22,19 @@ window.addEventListener("wheel", function (event) {
 //터치이벤트
 window.addEventListener("touchstart", function(event){
     firstTouchPos = event.touches[0].pageY;
-    console.log(firstTouchPos);
 });
 window.addEventListener("touchend", function(event){
-    ScrollSection(((firstTouchPos - event.touches[0].pageY) > 0) ? 1 : -1);
+    let gap = firstTouchPos - event.changedTouches[0].pageY;
+    if(gap > -49 && gap < 49){
+        return;
+    } 
+    else if(gap > 50){
+        gap = 1;
+    }
+    else{
+        gap = -1;
+    }
+    ScrollSection(gap);
 });
 //함수
 function ScrollSection(dir) {
