@@ -3,43 +3,27 @@ const motoFirst = document.getElementById("moto1");
 const motoSecond = document.getElementById("moto2");
 const motoThird = document.getElementById("moto3");
 const motoSpan = document.querySelectorAll("#moto3 dl dd span");
-let scrollIndex = 0;
-let isClicked = false;
-window.addEventListener("click", () => {
-    if(isClicked) return;
-    isClicked = true;
-    switch (scrollIndex) {
-        case 0:
-            ActiveFirstMoto();
-            break;
-        case 1:
-            ActiveSecondMoto();
-            break;
-        case 2:
-            ActiveThirdMoto();
-            break;
-    }
-    
-})
+let MotoIndex = 0;
+let isMotoActive = false;
+
 
 function ActiveFirstMoto() {
     motoFirstText[0].style.transform = 'translateY(0)';
     setTimeout(() => {
         motoFirstText[0].style.backgroundColor = 'white';
-        motoFirst.style.backgroundImage = "url(./img/anger1.png)";
         setTimeout(() => {
             motoFirstText[1].style.transform = 'translateY(0)';
             setTimeout(() => {
                 motoFirstText[1].style.backgroundColor = 'white';
-                motoFirst.style.backgroundImage = "url(./img/anger2.png)";
                 setTimeout(() => {
                     motoFirstText[2].style.transform = 'translateY(0)';
                     setTimeout(() => {
                         motoFirstText[2].style.backgroundColor = 'white';
-                        motoFirst.style.backgroundImage = "url(./img/anger3.png)";
                         setTimeout(()=>{
-                            scrollIndex++;
-                            isClicked = false;
+                            MotoIndex++;
+                            isMotoActive = false;
+                            console.log("DONE");
+                            isScrolling = false;
                         }, 500)    
                     }, 1000);
                 }, 500);
@@ -52,8 +36,9 @@ function ActiveSecondMoto(){
     motoSecond.style.transform = "rotateY(360deg)";
     setTimeout(()=>{
         ToggleHeaderColor("#191919");
-        scrollIndex++;
-        isClicked = false;
+        MotoIndex++;
+        isMotoActive = false;
+        isScrolling = false;
     }, 1000)
 }
 function ActiveThirdMoto(){
@@ -64,5 +49,23 @@ function ActiveThirdMoto(){
         for(let i = 0; i < motoSpan.length; i++){
             motoSpan[i].style.backgroundColor = "#3071F2";
         }
-    }, 1000)
+        isMotoDone = true;
+        isScrolling = false;
+    }, 1500)
+}
+function ScrollMoto(){
+    if(isMotoActive) return;
+    isMotoActive = true;
+    switch (MotoIndex) {
+        case 0:
+            ActiveFirstMoto();
+            break;
+        case 1:
+            console.log("DNOE2");
+            ActiveSecondMoto();
+            break;
+        case 2:
+            ActiveThirdMoto();
+            break;
+    }
 }

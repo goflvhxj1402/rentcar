@@ -29,3 +29,6 @@ body, h1, ul, li, a, p, address, dl, dt, dd{
     white-space: nowrap;
     overflow: hidden;
 }
+body{
+    overflow: hidden;
+}

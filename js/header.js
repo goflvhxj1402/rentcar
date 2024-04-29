@@ -21,6 +21,19 @@ navBtn.addEventListener("click", (event)=>{
 gnb.addEventListener("transitionend", ()=>{
     gnb.style.transition = "";
 })
+for(let i = 0; i < gnbText.length; i++){
+    gnbText[i].addEventListener("click", ()=>{
+        if(i == 0){
+            curScrollIndex = 3;
+        }
+        else{
+            curScrollIndex = 4;
+        }
+    })
+}
+gnbText[0].addEventListener("click", ()=>{
+    curScrollIndex = 3;
+})
 function ToggleNav(option = false){
     isGnbOpen = !isGnbOpen;
     gnb.style.transform = `translateX(${isGnbOpen ? 0 : 100}%)`;

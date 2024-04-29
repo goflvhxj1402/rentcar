@@ -13,8 +13,9 @@
 #header h1{
     position: absolute;
     left: 15px;
-    top: 12px;
+    top: 16px;
     z-index: 1;
+    font-size: 28px;
 }
 #header #navBtn{
     width: 25px;
@@ -46,7 +47,12 @@
     color: white;
     font-family: "NanumSquare";
     font-size: 18px;
-    font-weight: bold;
+    font-weight: bold; 
+}
+#gnbWrap li:hover{
+    background-color: #3071F2;
+    scale: 1.25;
+    transition: 0.3s;
 }
 @media all and (max-width: 1024px) {
     #header h1{

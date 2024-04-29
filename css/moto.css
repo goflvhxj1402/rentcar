@@ -1,6 +1,7 @@
 #moto{
     width: 100%;
     height: 100vh; 
+    overflow: hidden;
 }
 #moto ul{
     width: 100%;
@@ -25,10 +26,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    background-image: url(../img/anger0.png);
-    background-repeat: no-repeat;
-    background-position: center top 20%;
 }
 #motoTextWrap{
     backface-visibility: hidden;

@@ -1,0 +1,27 @@
+
+footer{
+    background-color: #191919;
+    border-top: 1px solid white;
+}
+footer > p{
+    font-family: "Noto Sans KR";
+    font-size: calc(100vw * (20/1920));
+    color: white;
+    
+    width: 85%;
+    margin: 0 auto;
+    padding: calc(100vw * (10/1920)) 0;   
+}
+footer address{ 
+    padding: calc(100vw * (10/1920)) 0;
+}
+#addressWrap{
+    width: 85%;
+    margin: 0 auto;
+}
+footer address p{
+    font-family: "SUB";
+    font-size: calc(100vw * (14/1920));
+    color: white;
+    margin: calc(100vw * (10/1920)) 0;
+}
