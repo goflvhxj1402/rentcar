@@ -1,3 +1,4 @@
+const carSelectWrap = document.getElementById("carSelectWrap");
 const comBtn = document.querySelectorAll("#carBtnWrap a");
 const moveBtn = document.querySelectorAll("#carSelect div");
 const arrCardWrap = document.getElementsByClassName("carCardWrap");
@@ -6,7 +7,7 @@ let curActiveWrap = arrCardWrap[0];
 let moveAmount = curActiveWrap.clientWidth / curActiveWrap.childElementCount;
 let curMoveIndex = 0;
 let maxMoveIndex = curActiveWrap.childElementCount - 1;
-
+let isCarSelectDone = false;
 //리사이즈이벤트
 window.addEventListener("resize", function(){
     ReSizingCarSelect();
@@ -41,7 +42,10 @@ for(let i = 0; i < moveBtn.length; i++){
         
     });
 }
-
+//carSelectWrap 트랜지션지우기
+carSelectWrap.addEventListener("transitionend", ()=>{
+    carSelectWrap.style.transition = "";
+})
 function ReSizingCarSelect(){
     curActiveWrap.style.transition = "";
     moveAmount = curActiveWrap.clientWidth / curActiveWrap.childElementCount;
@@ -53,4 +57,9 @@ function MoveCard(dir){
     }
     curMoveIndex += dir;
     curActiveWrap.style.transform = `translateX(${-curMoveIndex * moveAmount}px)`;
+}
+function ShowCarSelect(){
+    carSelectWrap.style.opacity = "1";
+    carSelectWrap.style.transform = "translateY(0)";
+    isCarSelectDone = true;
 }

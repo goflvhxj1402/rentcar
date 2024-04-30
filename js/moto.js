@@ -22,7 +22,6 @@ function ActiveFirstMoto() {
                         setTimeout(()=>{
                             MotoIndex++;
                             isMotoActive = false;
-                            console.log("DONE");
                             isScrolling = false;
                         }, 500)    
                     }, 1000);
@@ -42,6 +41,7 @@ function ActiveSecondMoto(){
     }, 1000)
 }
 function ActiveThirdMoto(){
+    motoSecond.style.scale = "1.5";
     motoSecond.style.opacity = "0";
     motoThird.style.opacity = "1";
     ToggleHeaderColor("white");
@@ -61,7 +61,6 @@ function ScrollMoto(){
             ActiveFirstMoto();
             break;
         case 1:
-            console.log("DNOE2");
             ActiveSecondMoto();
             break;
         case 2:

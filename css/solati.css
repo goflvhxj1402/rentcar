@@ -23,6 +23,9 @@
 #solatiInfo{
     display: flex;
     flex-direction: column;
+    transition: 1.0s;
+    transform: translateY(100%);
+    opacity: 0;
 }
 #solatiInfo dt{
     order: 1;

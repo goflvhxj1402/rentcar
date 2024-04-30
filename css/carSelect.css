@@ -38,6 +38,9 @@
     justify-content: center;
     gap: calc(100vw * (30/1920));
     color: white;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: 1.0s;
 }
 #carSelectWrap > dt{
     width: 100%;

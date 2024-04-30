@@ -14,7 +14,9 @@
     font-weight: bold;
     color: white;
     text-align: center;
+    position: relative;
 }
+
 #businessCard ul{
     width: calc(100vw * (860/1920));
     height: calc(100vw * (540/1920));
@@ -125,6 +127,29 @@
      #businessCard > p{
         font-size: calc(100vw * (38 / 780));
     }
+    #businessCard > p::after{
+        content: "touch";
+        display: inline inline-block;
+        height: 100%;
+        text-transform: uppercase;
+        color: white;
+        font-size: calc(100vw * (100/1920));
+        font-family: "Noto Sans KR";
+        font-weight: bold;
+        position: absolute;
+        left: calc(50% - 100vw * (80/780));
+        bottom: -120%;
+        background-image: url(../img/botArrow.png);
+        background-repeat: no-repeat;
+        background-position: center bottom+5px;
+        background-size: 50%;
+    
+        animation-name: arrowMove;
+        animation-duration: 0.5s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
     #businessCard ul{
         width: calc(100vw * (688/780));
         height: calc(100vw * (432/780));
@@ -154,5 +179,15 @@
         width: calc(100vw * (275 / 780));
         height: calc(100vw * (82 / 780));
         line-height: calc(100vw * (82 / 780));
+    }
+}
+@keyframes arrowMove {
+    from{
+        scale: 1.0;
+        background-position: center bottom+5px;
+    }
+    to{
+        scale: 1.15;
+        background-position: center bottom;
     }
 }
