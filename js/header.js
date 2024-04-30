@@ -39,6 +39,8 @@ for(let i = 0; i < gnbText.length; i++){
         else{
             curScrollIndex = 4;
         }
+        ShowSolati();
+        ShowCarSelect();
     })
 }
 gnbText[0].addEventListener("click", ()=>{

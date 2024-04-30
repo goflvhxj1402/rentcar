@@ -124,31 +124,14 @@
     }
 }
 @media all and (max-width: 780px) {
+    #businessCard ul li:nth-of-type(1){
+        transform: rotateY(180deg);
+    }
+    #businessCard ul li:nth-of-type(2){
+        transform: rotateY(360deg);
+    }
      #businessCard > p{
         font-size: calc(100vw * (38 / 780));
-    }
-    #businessCard > p::after{
-        content: "touch";
-        display: inline inline-block;
-        height: 100%;
-        text-transform: uppercase;
-        color: white;
-        font-size: calc(100vw * (100/1920));
-        font-family: "Noto Sans KR";
-        font-weight: bold;
-        position: absolute;
-        left: calc(50% - 100vw * (80/780));
-        bottom: -120%;
-        background-image: url(../img/botArrow.png);
-        background-repeat: no-repeat;
-        background-position: center bottom+5px;
-        background-size: 50%;
-    
-        animation-name: arrowMove;
-        animation-duration: 0.5s;
-        animation-timing-function: ease-in-out;
-        animation-iteration-count: infinite;
-        animation-direction: alternate;
     }
     #businessCard ul{
         width: calc(100vw * (688/780));
@@ -157,6 +140,13 @@
     }
     #businessCard ul li{
         border-radius: calc(100vw * (13 / 780));
+    }
+    #businessCard ul li:nth-of-type(2) a{
+        animation-name: inquireMove;
+        animation-duration: 0.5s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
     }
     .cardHeader p:nth-of-type(1){
         font-size: calc(100vw * (42/780));
@@ -170,6 +160,7 @@
     .cardMain p:last-child{
         font-size: calc(100vw * (28/780));
         letter-spacing: calc(100vw * (2/780));
+     
     }
     #cardAddress p{
         font-size: calc(100vw * (20/780));
@@ -189,5 +180,13 @@
     to{
         scale: 1.15;
         background-position: center bottom;
+    }
+}
+@keyframes inquireMove {
+    from{
+        scale: 1.0;
+    }
+    to{
+        scale: 1.05;
     }
 }

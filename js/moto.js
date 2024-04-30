@@ -24,11 +24,11 @@ function ActiveFirstMoto() {
                             isMotoActive = false;
                             isScrolling = false;
                         }, 500)    
-                    }, 1000);
-                }, 500);
-            }, 1000);
-        }, 500);
-    }, 1000);
+                    }, 500);
+                }, 250);
+            }, 500);
+        }, 250);
+    }, 500);
 }
 function ActiveSecondMoto(){
     motoFirst.style.transform = "rotateY(180deg)";
@@ -51,7 +51,7 @@ function ActiveThirdMoto(){
         }
         isMotoDone = true;
         isScrolling = false;
-    }, 1500)
+    }, 1000)
 }
 function ScrollMoto(){
     if(isMotoActive) return;

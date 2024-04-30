@@ -16,6 +16,7 @@
     top: 16px;
     z-index: 1;
     font-size: 28px;
+    font-family: "Noto Sans KR";
 }
 #header h1 a{
   color: white;
@@ -53,8 +54,11 @@
     font-weight: bold; 
 }
 #gnbWrap li:hover{
-    background-color: #3071F2;
     scale: 1.25;
+    transition: 0.3s;
+}
+#gnbWrap li:hover a{
+    background-color: #3071F2;
     transition: 0.3s;
 }
 @media all and (max-width: 1024px) {

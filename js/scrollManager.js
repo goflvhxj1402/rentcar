@@ -16,6 +16,7 @@ window.addEventListener("DOMContentLoaded", function (event) {
 //리사이즈이벤트
 window.addEventListener("resize", function (event) {
     scrollAmount = window.innerHeight;
+    window.scroll(0, curScrollIndex * scrollAmount);
 });
 //스크롤이벤트
 window.addEventListener("wheel", function (event) {
@@ -58,6 +59,11 @@ function ScrollSection(dir) {
         case 1:
             if (!isSolatiDone) {
                 ShowSolati();
+            }
+            break;
+        case 2:
+            if(!isMotoDone && dir == 1){
+                ScrollMoto();
             }
             break;
         case 3:
