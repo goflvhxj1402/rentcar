@@ -48,7 +48,7 @@
     font-family: "NanumSquare";
 }
 #carBtnWrap{
-    width: calc(100vw * (105 / 1920) * 5);
+    width: calc(100vw * (105 / 1920) * 4);
 
     display: flex;
    justify-content: space-between;
@@ -109,8 +109,10 @@
 .carCard dt{
     width: 100%;
     height: 60%;
-
-    background-color: gray;
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 80%;
     border-radius: calc(100vw * (8/1920)) calc(100vw * (8/1920)) 0 0;
 }
 .carCard dd:nth-of-type(1){
@@ -150,6 +152,163 @@
     font-weight: bold;
     color: black;
     border: 1px solid #191919;
+}
+#hyundai li:nth-of-type(1) dl dt{
+    background-image: url(../img/grandeur.png);
+}
+#hyundai li:nth-of-type(2) dl dt{
+    background-image: url(../img/theNewGrandeur.png);
+}
+#hyundai li:nth-of-type(3) dl dt{
+    background-image: url(../img/sonata.png);
+}
+#hyundai li:nth-of-type(4) dl dt{
+    background-image: url(../img/abanthe.png);
+    background-size: contain;
+}
+#hyundai li:nth-of-type(5) dl dt{
+    background-image: url(../img/sonata1.png);
+    background-size: contain;
+}
+#hyundai li:nth-of-type(6) dl dt{
+    background-image: url(../img/santafe.png);
+    background-size: contain;
+}
+#hyundai li:nth-of-type(7) dl dt{
+    background-image: url(../img/santafe2.png);
+    background-size: contain;
+}
+#hyundai li:nth-of-type(8) dl dt{
+    background-image: url(../img/tusan.png);
+    background-size: contain;
+}
+#hyundai li:nth-of-type(9) dl dt{
+    background-image: url(../img/pelisade.png);
+    background-size: contain;
+}
+#hyundai li:nth-of-type(10) dl dt{
+    background-image: url(../img/ionic.png);
+    background-size: contain;
+}
+#hyundai li:nth-of-type(11) dl dt{
+    background-image: url(../img/starex.png);
+    background-size: contain;
+}
+#hyundai li:nth-of-type(12) dl dt{
+    background-image: url(../img/staria.png);
+    background-size: contain;
+}
+#hyundai li:nth-of-type(13) dl dt{
+    background-image: url(../img/kona.png);
+    background-size: contain;
+}
+#hyundai li:nth-of-type(14) dl dt{
+    background-image: url(../img/g90.png);
+    background-size: contain;
+}
+#hyundai li:nth-of-type(15) dl dt{
+    background-image: url(../img/g80.png);
+    background-size: contain;
+}
+#hyundai li:nth-of-type(16) dl dt{
+    background-image: url(../img/gv80.png);
+    background-size: contain;
+}
+#kia li:nth-of-type(1) dl dt{
+    background-image: url(../img/carnival.png);
+    background-size: contain;
+}
+#kia li:nth-of-type(2) dl dt{
+    background-image: url(../img/k5.png);
+    background-size: contain;
+}
+#kia li:nth-of-type(3) dl dt{
+    background-image: url(../img/sorento.png);
+    background-size: contain;
+}
+#kia li:nth-of-type(4) dl dt{
+    background-image: url(../img/sportiz.png);
+    background-size: contain;
+}
+#kia li:nth-of-type(5) dl dt{
+    background-image: url(../img/morning.png);
+    background-size: contain;
+}
+#kia li:nth-of-type(6) dl dt{
+    background-image: url(../img/k7.png);
+    background-size: contain;
+}
+#kia li:nth-of-type(7) dl dt{
+    background-image: url(../img/k8.png);
+    background-size: contain;
+}
+#kia li:nth-of-type(8) dl dt{
+    background-image: url(../img/ev6.png);
+    background-size: contain;
+}
+#kia li:nth-of-type(9) dl dt{
+    background-image: url(../img/ray.png);
+    background-size: contain;
+}
+#kia li:nth-of-type(10) dl dt{
+    background-image: url(../img/seltos.png);
+    background-size: contain;
+}
+#ect li:nth-of-type(1) dl dt{
+    background-image: url(../img/xm3.png);
+    background-size: contain;
+}
+#ect li:nth-of-type(2) dl dt{
+    background-image: url(../img/spark.png);
+    background-size: contain;
+}
+#imported li:nth-of-type(1) dl dt{
+    background-image: url(../img/benz_c.png);
+    background-size: contain;
+}
+#imported li:nth-of-type(2) dl dt{
+    background-image: url(../img/benz_e.png);
+    background-size: contain;
+}
+#imported li:nth-of-type(3) dl dt{
+    background-image: url(../img/benz_g.png);
+    background-size: contain;
+}
+#imported li:nth-of-type(4) dl dt{
+    background-image: url(../img/benz_s.png);
+    background-size: contain;
+}
+#imported li:nth-of-type(5) dl dt{
+    background-image: url(../img/bmw_5.png);
+    background-size: contain;
+}
+#imported li:nth-of-type(6) dl dt{
+    background-image: url(../img/bmw_3.png);
+    background-size: contain;
+}
+#imported li:nth-of-type(7) dl dt{
+    background-image: url(../img/bmw_7.png);
+    background-size: contain;
+}
+#imported li:nth-of-type(8) dl dt{
+    background-image: url(../img/bmw_x5.png);
+    background-size: contain;
+}
+#imported li:nth-of-type(9) dl dt{
+    background-image: url(../img/bmw_x7.png);
+    background-size: contain;
+}
+#imported li:nth-of-type(10) dl dt{
+    background-image: url(../img/audi_a6.png);
+    background-size: contain;
+}
+#imported li:nth-of-type(11) dl dt{
+    background-image: url(../img/jeguer.png);
+    background-size: contain;
+}
+#imported li:nth-of-type(12) dl dt{
+    background-image: url(../img/ateon.png);
+    background-size: contain;
 }
 @media all and (max-width: 1280px) {
     #carSelect div{
