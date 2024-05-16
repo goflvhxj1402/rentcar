@@ -1,22 +1,41 @@
 const arrSection = document.querySelectorAll("section");
-const scrollAmount = window.innerHeight;
+const mobile = document.querySelector("#mobileConfirm");
+const mobileBtn = document.querySelector("#mobileConfirm p a")
+let scrollAmount = window.innerHeight;
 let isScrolling = false;
 let maxScrollIndex = arrSection.length;
 let curScrollIndex = 0;
 let isMotoDone = false;
 let firstTouchPos;
 let isLoaded = false;
+let isMobileActive = false;
+
+mobileBtn.addEventListener("click", function(e){
+    console.log(isMobileActive);
+    mobile.style.display = "none";
+    openFullscreen(document.documentElement);
+})
 //리로드이벤트
 window.addEventListener("DOMContentLoaded", function (event) {
     setTimeout(() => {
         window.scroll(0, 0);
         isLoaded = true;
+        mobile.style.display = "flex";
+        // if(!isMobileActive && window.innerWidth < 781){
+        //     isMobileActive = true;
+        //     mobile.style.display = "flex";  
+        // }
     }, this.performance.now());
 })
 //리사이즈이벤트
 window.addEventListener("resize", function (event) {
     scrollAmount = window.innerHeight;
     window.scroll(0, curScrollIndex * scrollAmount);
+    // if(!isMobileActive && window.innerWidth < 781){
+    //     isMobileActive = true;
+    //     mobile.style.display = "flex";
+    //     console.log("Check");
+    // }
 });
 //스크롤이벤트
 window.addEventListener("wheel", function (event) {
@@ -85,4 +104,21 @@ function ScrollSection(dir) {
     setTimeout(() => {
         isScrolling = false;
     }, 800)
+}
+
+// 풀 스크린 모드 활성화 함수
+function openFullscreen(elem) {
+    if (elem.requestFullscreen) {
+        elem.requestFullscreen().catch(err => {
+            alert("Cannot enter fullscreen mode: " + err.message);
+        });
+    } else if (elem.webkitRequestFullscreen) { // Safari
+        elem.webkitRequestFullscreen().catch(err => {
+            alert("Cannot enter fullscreen mode: " + err.message);
+        });
+    } else if (elem.msRequestFullscreen) { // IE11
+        elem.msRequestFullscreen().catch(err => {
+            alert("Cannot enter fullscreen mode: " + err.message);
+        });
+    }
 }
