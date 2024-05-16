@@ -10,7 +10,7 @@ let isMobileMode = false;
 //리로드이벤트
 window.addEventListener("DOMContentLoaded", function (event) {
     setTimeout(() => {
-        window.scroll(0, 0);
+        // window.scroll(0, 0);
         isLoaded = true;
         scrollAmount = this.window.innerHeight;
         if(this.window.innerWidth < 781){
