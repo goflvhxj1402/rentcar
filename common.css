@@ -6,6 +6,9 @@
 /* 'Noto Sans KR' */
 
 /* INIT */
+:root {
+    --doc-height: 100%;
+   }
 *{
     box-sizing: border-box;
     font-style: normal;
@@ -32,4 +35,8 @@ body, h1, ul, li, a, p, address, dl, dt, dd{
 body{
     overflow: hidden;
     overscroll-behavior: contain;
+}
+html, body{
+    height: 100vh; /* fallback for Js load */
+    height: var(--doc-height);
 }

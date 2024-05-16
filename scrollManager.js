@@ -7,23 +7,29 @@ let isMotoDone = false;
 let firstTouchPos;
 let isLoaded = false;
 let isMobileMode = false;
+const documentHeight = () => {
+    const doc = document.documentElement
+    doc.style.setProperty('--doc-height', `${window.innerHeight}px`)
+}
+window.addEventListener("resize", documentHeight)
+documentHeight()
 //리로드이벤트
 window.addEventListener("DOMContentLoaded", function (event) {
-    setTimeout(() => { 
+    setTimeout(() => {
         isLoaded = true;
         scrollAmount = this.window.innerHeight;
-        if(this.window.innerWidth < 781){
+        if (this.window.innerWidth < 781) {
             mobileMode();
         }
-        else{
+        else {
             window.scroll(0, 0);
         }
-       
+
     }, this.performance.now());
 })
 //리사이즈이벤트
 window.addEventListener("resize", function (event) {
-    if(isMobileMode)return;
+    if (isMobileMode) return;
     scrollAmount = window.innerHeight;
     window.scroll(0, curScrollIndex * scrollAmount);
 });
@@ -53,6 +59,7 @@ window.addEventListener("wheel", function (event) {
 // });
 //함수
 function ScrollSection(dir) {
+    if (isMobileMode) return;
     if ((dir == 1 && curScrollIndex >= maxScrollIndex)
         || (dir == -1 && curScrollIndex == 0)) {
         return;
@@ -71,7 +78,7 @@ function ScrollSection(dir) {
             }
             break;
         case 2:
-            if(!isMotoDone && dir == 1){
+            if (!isMotoDone && dir == 1) {
                 ScrollMoto();
             }
             break;
@@ -96,7 +103,7 @@ function ScrollSection(dir) {
     }, 800)
 }
 //모바일버전
-function mobileMode(){
+function mobileMode() {
     ShowCarSelect();
     ShowSolati();
     ActiveThirdMoto();
