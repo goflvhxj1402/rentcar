@@ -31,4 +31,5 @@ body, h1, ul, li, a, p, address, dl, dt, dd{
 }
 body{
     overflow: hidden;
+    overscroll-behavior: contain;
 }
