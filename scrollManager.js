@@ -6,15 +6,17 @@ let curScrollIndex = 0;
 let isMotoDone = false;
 let firstTouchPos;
 let isLoaded = false;
+let isMobileMode = false;
 //리로드이벤트
 window.addEventListener("DOMContentLoaded", function (event) {
     setTimeout(() => {
         window.scroll(0, 0);
         isLoaded = true;
-        for(let i = 0; i < arrSection.length; i++){
-            arrSection[i].style.height = this.window.innerHeight;
-        }
         scrollAmount = this.window.innerHeight;
+        if(this.window.innerWidth < 781){
+            mobileMode();
+        }
+       
     }, this.performance.now());
 })
 //리사이즈이벤트
@@ -24,28 +26,28 @@ window.addEventListener("resize", function (event) {
 });
 //스크롤이벤트
 window.addEventListener("wheel", function (event) {
-    if (!isLoaded) return;
+    if (!isLoaded || isMobileMode) return;
     ScrollSection((event.deltaY > 0) ? 1 : -1);
 });
 //터치이벤트
-window.addEventListener("touchstart", function (event) {
-    if (!isLoaded) return;
-    firstTouchPos = event.touches[0].pageY;
-});
-window.addEventListener("touchend", function (event) {
-    if (!isLoaded) return;
-    let gap = firstTouchPos - event.changedTouches[0].pageY;
-    if (gap > -49 && gap < 49) {
-        return;
-    }
-    else if (gap > 50) {
-        gap = 1;
-    }
-    else {
-        gap = -1;
-    }
-    ScrollSection(gap);
-});
+// window.addEventListener("touchstart", function (event) {
+//     if (!isLoaded) return;
+//     firstTouchPos = event.touches[0].pageY;
+// });
+// window.addEventListener("touchend", function (event) {
+//     if (!isLoaded) return;
+//     let gap = firstTouchPos - event.changedTouches[0].pageY;
+//     if (gap > -49 && gap < 49) {
+//         return;
+//     }
+//     else if (gap > 50) {
+//         gap = 1;
+//     }
+//     else {
+//         gap = -1;
+//     }
+//     ScrollSection(gap);
+// });
 //함수
 function ScrollSection(dir) {
     if ((dir == 1 && curScrollIndex >= maxScrollIndex)
@@ -89,4 +91,14 @@ function ScrollSection(dir) {
     setTimeout(() => {
         isScrolling = false;
     }, 800)
+}
+//모바일버전
+function mobileMode(){
+    ShowCarSelect();
+    ShowSolati();
+    ActiveThirdMoto();
+    MotoIndex = 2;
+    document.body.style.overflowX = "hidden";
+    document.body.style.overflowY = "visible";
+    isMobileMode = true;
 }
