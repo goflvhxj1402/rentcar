@@ -1,5 +1,5 @@
 const arrSection = document.querySelectorAll("section");
-const scrollAmount = window.innerHeight;
+let scrollAmount = window.innerHeight;
 let isScrolling = false;
 let maxScrollIndex = arrSection.length;
 let curScrollIndex = 0;
@@ -11,6 +11,14 @@ window.addEventListener("DOMContentLoaded", function (event) {
     setTimeout(() => {
         window.scroll(0, 0);
         isLoaded = true;
+        scrollAmount = this.window.innerHeight;
+        if(this.window.innerWidth < 780){
+            isMotoDone = true;
+            MotoIndex = 2;
+            motoFirst.style.display = "none";
+            motoSecond.style.display = "none";
+            ActiveThirdMoto();
+        }
     }, this.performance.now());
 })
 //리사이즈이벤트
@@ -24,10 +32,10 @@ window.addEventListener("wheel", function (event) {
     ScrollSection((event.deltaY > 0) ? 1 : -1);
 });
 //터치이벤트
-window.addEventListener("touchstart", function (event) {
-    if (!isLoaded) return;
-    firstTouchPos = event.touches[0].pageY;
-});
+// window.addEventListener("touchstart", function (event) {
+//     if (!isLoaded) return;
+//     firstTouchPos = event.touches[0].pageY;
+// });
 window.addEventListener("touchend", function (event) {
     if (!isLoaded) return;
     let gap = firstTouchPos - event.changedTouches[0].pageY;
