@@ -98,7 +98,6 @@ function mobileMode(){
     ShowSolati();
     ActiveThirdMoto();
     MotoIndex = 2;
-    document.body.style.overflowX = "hidden";
-    document.body.style.overflowY = "visible";
+    document.body.style.overflowY = "scroll";
     isMobileMode = true;
 }
