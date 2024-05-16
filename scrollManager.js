@@ -9,18 +9,21 @@ let isLoaded = false;
 let isMobileMode = false;
 //리로드이벤트
 window.addEventListener("DOMContentLoaded", function (event) {
-    setTimeout(() => {
-        // window.scroll(0, 0);
+    setTimeout(() => { 
         isLoaded = true;
         scrollAmount = this.window.innerHeight;
         if(this.window.innerWidth < 781){
             mobileMode();
+        }
+        else{
+            window.scroll(0, 0);
         }
        
     }, this.performance.now());
 })
 //리사이즈이벤트
 window.addEventListener("resize", function (event) {
+    if(isMobileMode)return;
     scrollAmount = window.innerHeight;
     window.scroll(0, curScrollIndex * scrollAmount);
 });
