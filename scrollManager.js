@@ -104,6 +104,10 @@ function ScrollSection(dir) {
 }
 //모바일버전
 function mobileMode() {
+    let screenHeight = window.innerHeight;
+    for(let i = 0; i < arrSection.length; i++){
+        arrSection[i].style.height = screenHeight;
+    }
     ShowCarSelect();
     ShowSolati();
     ActiveThirdMoto();
