@@ -7,12 +7,7 @@ let isMotoDone = false;
 let firstTouchPos;
 let isLoaded = false;
 let isMobileMode = false;
-const documentHeight = () => {
-    const doc = document.documentElement
-    doc.style.setProperty('--doc-height', `${window.innerHeight}px`)
-}
-window.addEventListener("resize", documentHeight)
-documentHeight()
+
 //리로드이벤트
 window.addEventListener("DOMContentLoaded", function (event) {
     setTimeout(() => {
@@ -20,6 +15,7 @@ window.addEventListener("DOMContentLoaded", function (event) {
         scrollAmount = this.window.innerHeight;
         if (this.window.innerWidth < 781) {
             mobileMode();
+            arrSection[0].children[2].children[0].style.color = "red";
         }
         else {
             window.scroll(0, 0);
@@ -27,17 +23,17 @@ window.addEventListener("DOMContentLoaded", function (event) {
 
     }, this.performance.now());
 })
-//리사이즈이벤트
-window.addEventListener("resize", function (event) {
-    if (isMobileMode) return;
-    scrollAmount = window.innerHeight;
-    window.scroll(0, curScrollIndex * scrollAmount);
-});
-//스크롤이벤트
-window.addEventListener("wheel", function (event) {
-    if (!isLoaded || isMobileMode) return;
-    ScrollSection((event.deltaY > 0) ? 1 : -1);
-});
+// //리사이즈이벤트
+// window.addEventListener("resize", function (event) {
+//     if (isMobileMode) return;
+//     scrollAmount = window.innerHeight;
+//     window.scroll(0, curScrollIndex * scrollAmount);
+// });
+// //스크롤이벤트
+// window.addEventListener("wheel", function (event) {
+//     if (!isLoaded || isMobileMode) return;
+//     ScrollSection((event.deltaY > 0) ? 1 : -1);
+// });
 //터치이벤트
 // window.addEventListener("touchstart", function (event) {
 //     if (!isLoaded) return;
@@ -107,6 +103,7 @@ function mobileMode() {
     let screenHeight = window.innerHeight;
     for(let i = 0; i < arrSection.length; i++){
         arrSection[i].style.height = screenHeight;
+        console.log(getComputedStyle(arrSection[i]).height);
     }
     ShowCarSelect();
     ShowSolati();
