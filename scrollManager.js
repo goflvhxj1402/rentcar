@@ -23,17 +23,17 @@ window.addEventListener("DOMContentLoaded", function (event) {
 
     }, this.performance.now());
 })
-// //리사이즈이벤트
-// window.addEventListener("resize", function (event) {
-//     if (isMobileMode) return;
-//     scrollAmount = window.innerHeight;
-//     window.scroll(0, curScrollIndex * scrollAmount);
-// });
-// //스크롤이벤트
-// window.addEventListener("wheel", function (event) {
-//     if (!isLoaded || isMobileMode) return;
-//     ScrollSection((event.deltaY > 0) ? 1 : -1);
-// });
+//리사이즈이벤트
+window.addEventListener("resize", function (event) {
+    if (isMobileMode) return;
+    scrollAmount = window.innerHeight;
+    window.scroll(0, curScrollIndex * scrollAmount);
+});
+//스크롤이벤트
+window.addEventListener("wheel", function (event) {
+    if (!isLoaded || isMobileMode) return;
+    ScrollSection((event.deltaY > 0) ? 1 : -1);
+});
 //터치이벤트
 // window.addEventListener("touchstart", function (event) {
 //     if (!isLoaded) return;
