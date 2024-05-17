@@ -13,14 +13,8 @@ window.addEventListener("DOMContentLoaded", function (event) {
     setTimeout(() => {
         isLoaded = true;
         scrollAmount = this.window.innerHeight;
-        if (this.window.innerWidth < 781) {
-            mobileMode();
-            arrSection[0].children[2].children[0].style.color = "red";
-        }
-        else {
-            window.scroll(0, 0);
-        }
-
+        (this.window.innerWidth < 781) ? 
+        mobileMode() : this.window.scroll(0, 0);
     }, this.performance.now());
 })
 //리사이즈이벤트
@@ -100,6 +94,7 @@ function ScrollSection(dir) {
 }
 //모바일버전
 function mobileMode() {
+    isMobileMode = true;
     let screenHeight = window.innerHeight;
     for(let i = 0; i < arrSection.length; i++){
         arrSection[i].style.height = screenHeight;
@@ -110,5 +105,4 @@ function mobileMode() {
     ActiveThirdMoto();
     MotoIndex = 2;
     document.body.style.overflowY = "scroll";
-    isMobileMode = true;
 }
