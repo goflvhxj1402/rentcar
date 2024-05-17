@@ -13,27 +13,21 @@ window.addEventListener("DOMContentLoaded", function (event) {
     setTimeout(() => {
         isLoaded = true;
         scrollAmount = this.window.innerHeight;
-        if (this.window.innerWidth < 781) {
-            mobileMode();
-            arrSection[0].children[2].children[0].style.color = "red";
-        }
-        else {
-            window.scroll(0, 0);
-        }
-
+        (this.window.innerWidth < 781) ? 
+        mobileMode() : this.window.scroll(0, 0);
     }, this.performance.now());
 })
-// //리사이즈이벤트
-// window.addEventListener("resize", function (event) {
-//     if (isMobileMode) return;
-//     scrollAmount = window.innerHeight;
-//     window.scroll(0, curScrollIndex * scrollAmount);
-// });
-// //스크롤이벤트
-// window.addEventListener("wheel", function (event) {
-//     if (!isLoaded || isMobileMode) return;
-//     ScrollSection((event.deltaY > 0) ? 1 : -1);
-// });
+//리사이즈이벤트
+window.addEventListener("resize", function (event) {
+    if (isMobileMode) return;
+    scrollAmount = window.innerHeight;
+    window.scroll(0, curScrollIndex * scrollAmount);
+});
+//스크롤이벤트
+window.addEventListener("wheel", function (event) {
+    if (!isLoaded || isMobileMode) return;
+    ScrollSection((event.deltaY > 0) ? 1 : -1);
+});
 //터치이벤트
 // window.addEventListener("touchstart", function (event) {
 //     if (!isLoaded) return;
@@ -100,6 +94,7 @@ function ScrollSection(dir) {
 }
 //모바일버전
 function mobileMode() {
+    isMobileMode = true;
     let screenHeight = window.innerHeight;
     for(let i = 0; i < arrSection.length; i++){
         arrSection[i].style.height = screenHeight;
@@ -110,5 +105,4 @@ function mobileMode() {
     ActiveThirdMoto();
     MotoIndex = 2;
     document.body.style.overflowY = "scroll";
-    isMobileMode = true;
 }
